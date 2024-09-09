@@ -34,7 +34,7 @@ function DragAndDrop() {
         const sheetName = workbook.SheetNames[0];
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 }); // Use header: 1 to use first row as keys
-        const headers = jsonData.shift(); // Remove headers row
+        const headers = jsonData.shift(); // Remove headers row.
         const formattedData = jsonData.map(row =>
           headers.reduce((obj, header, index) => {
             obj[header] = row[index];
